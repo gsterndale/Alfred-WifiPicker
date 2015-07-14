@@ -1,27 +1,27 @@
 #OSX and Windows Wifi Scanner
 #Created by Matt Silas
+#https://github.com/MattSilas/Wifi-Scanner/blob/master/wifiscan.py
 #Modified by Anthony Townsend 14 July 2015
 
 import sys
 import xml.etree.ElementTree as ET
 
 #Runs OSX Airport utility with scan and xml out flags set
-def find_access_points_osx():
+def find_access_points():
     from commands import getoutput
     scan = '/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -s -x'   
     root = ET.fromstring(getoutput(scan))
     output = root.getchildren()[0]
 
-    access_points = []
+    access_points = {}
 
     for access_point in output:
         
         # 1st string is MAC address
-        # address = access_point.find("string").text
+        mac = access_point.find("string").text
         
         # 2nd string is SSID
-        # just the one piece of info for now since access_points is a list, not a tuple
-        # we'll fix that later onces its working
+
         ssid = access_point.findall("string")[1].text
         
         # 8th integer is signal strength
