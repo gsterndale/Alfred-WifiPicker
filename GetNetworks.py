@@ -13,17 +13,21 @@ def run():
         
         # Append Values to tuple
         # DEBUG
-        # why arent these variables from WifiScan return data available here
-        network_tuples.append((ssid, address, strength, 'OPEN.png'))
+        # this isnt throwing any errors but not passing any data either now
+        #
+        mac = address
+        netname = ssid
+        network_tuples.append((netname, mac))
+        
 
     # Create the object to display mounts
     feedback = Feedback()
 
     # Add the network items
-    for title, subtitle, description, network_icon in network_tuples:
+    for mac in network_tuples:
         
         # feedback.add_item(volume_name)
-        feedback.add_item(title, subtitle, description, icon=network_icon)
+        feedback.add_item(netname, mac)
 
     return feedback
         

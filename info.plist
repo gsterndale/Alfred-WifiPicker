@@ -7,7 +7,16 @@
 	<key>connections</key>
 	<dict>
 		<key>0A7F94DA-8824-4BEA-892C-25D9882A4143</key>
-		<array/>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7C24829E-6EDA-48DF-93AE-4C238B4A6355</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 		<key>7C24829E-6EDA-48DF-93AE-4C238B4A6355</key>
 		<array>
 			<dict>
@@ -33,31 +42,12 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>127</integer>
-				<key>script</key>
-				<string></string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>7C24829E-6EDA-48DF-93AE-4C238B4A6355</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>argumenttype</key>
 				<integer>2</integer>
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>keyword</key>
-				<string>xy</string>
+				<string>wifi</string>
 				<key>queuedelaycustom</key>
 				<integer>1</integer>
 				<key>queuedelayimmediatelyinitially</key>
@@ -86,6 +76,25 @@ print run()</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>networksetup -setairportnetwork en0 {query}</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>7C24829E-6EDA-48DF-93AE-4C238B4A6355</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>lastpathcomponent</key>
 				<false/>
 				<key>onlyshowifquerypopulated</key>
@@ -96,6 +105,10 @@ print run()</string>
 				<false/>
 				<key>sticky</key>
 				<false/>
+				<key>text</key>
+				<string>Connected to {query} (I hope)</string>
+				<key>title</key>
+				<string>Connected!</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.output.notification</string>
@@ -112,7 +125,7 @@ print run()</string>
 		<key>0A7F94DA-8824-4BEA-892C-25D9882A4143</key>
 		<dict>
 			<key>ypos</key>
-			<real>60</real>
+			<real>50</real>
 		</dict>
 		<key>7C24829E-6EDA-48DF-93AE-4C238B4A6355</key>
 		<dict>
