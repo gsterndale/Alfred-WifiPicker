@@ -4,36 +4,34 @@
 import os, WifiScan
 from Feedback import Feedback
 
+network_tuples = []
 
 def run():
     networks = WifiScan.find_access_points_osx()
-    network_tuples = []
     
     for address in networks:
         
         # Append Values to tuple
-        # DEBUG
-        # this isnt throwing any errors but not passing any data either now
+        # DEBUG - NEED TO TEST
+        # is this actually passing any data into network_tuples?
         #
-        mac = address
-        netname = ssid
-        network_tuples.append((netname, mac))
+        network_tuples.append((ssid, address))
         
 
-    # Create the object to display mounts
+    # Create the object to display networks
     feedback = Feedback()
 
     # Add the network items
-    for mac in network_tuples:
+
+    for ssid in network_tuples:
         
-        # feedback.add_item(volume_name)
-        feedback.add_item(netname, mac)
+        feedback.add_item(ssid, address)
 
     return feedback
         
 """
 
-      # Get Encryption Status STARTER
+# Get Encryption Status STARTER
       encryption = re.search('Protocol:\s+(.+)', extra_info)
       if volume_prot:
          volume_prot = volume_prot.group(1)
@@ -43,7 +41,6 @@ def run():
       else:
          continue
 
-# 
 
 # TO FIX
 # add back if - else loop when figure out how to grab encryption info

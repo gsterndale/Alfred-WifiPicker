@@ -20,7 +20,7 @@ def find_access_points_osx():
         # 2nd string is SSID
         ssid = access_point.findall("string")[1].text
         # 8th integer is signal strength
-        strength = abs(int(access_point.findall("integer")[7].text))
-        access_points[address] = strength
+        # strength = abs(int(access_point.findall("integer")[7].text))
+        # access_points[address] = strength
 
     return access_points
