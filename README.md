@@ -6,4 +6,5 @@ but surprisingly none have surfaced.
 
 Based on:
 Eject Disk workflow by Steffen Lyngbaek 
+
 Wi-Fi Scanner by Matt Silas - https://github.com/MattSilas/Wifi-Scanner/blob/master/wifiscan.py
