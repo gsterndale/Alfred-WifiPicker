@@ -5,6 +5,7 @@ This is a simple workflow to allow you to quickly pick a WiFi network to connect
 but surprisingly none have surfaced.
 
 Based on:
-Eject Disk workflow by Steffen Lyngbaek 
+
+Eject Disk workflow by Steffen Lyngbaek http://steffen.lyngbaek.com
 
 Wi-Fi Scanner by Matt Silas - https://github.com/MattSilas/Wifi-Scanner/blob/master/wifiscan.py
