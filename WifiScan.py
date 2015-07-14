@@ -12,15 +12,22 @@ def find_access_points_osx():
     root = ET.fromstring(getoutput(scan))
     output = root.getchildren()[0]
 
-    access_points = {}
+    access_points = []
 
     for access_point in output:
+        
         # 1st string is MAC address
-        address = access_point.find("string").text
+        # address = access_point.find("string").text
+        
         # 2nd string is SSID
+        # just the one piece of info for now since access_points is a list, not a tuple
+        # we'll fix that later onces its working
         ssid = access_point.findall("string")[1].text
+        
         # 8th integer is signal strength
         # strength = abs(int(access_point.findall("integer")[7].text))
         # access_points[address] = strength
-
+        
+        # TO DO figure out a way to grab encryption either YES or NONE set a flag
+        
     return access_points

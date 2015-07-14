@@ -42,6 +42,25 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>networksetup -setairportnetwork en0 {query}</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>7C24829E-6EDA-48DF-93AE-4C238B4A6355</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>argumenttype</key>
 				<integer>2</integer>
 				<key>escaping</key>
@@ -70,25 +89,6 @@ print run()</string>
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
 			<string>0A7F94DA-8824-4BEA-892C-25D9882A4143</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>networksetup -setairportnetwork en0 {query}</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>7C24829E-6EDA-48DF-93AE-4C238B4A6355</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -125,7 +125,7 @@ print run()</string>
 		<key>0A7F94DA-8824-4BEA-892C-25D9882A4143</key>
 		<dict>
 			<key>ypos</key>
-			<real>50</real>
+			<real>60</real>
 		</dict>
 		<key>7C24829E-6EDA-48DF-93AE-4C238B4A6355</key>
 		<dict>
