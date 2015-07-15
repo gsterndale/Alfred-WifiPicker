@@ -21,12 +21,12 @@ def find_access_points():
         mac = access_point.find("string").text
         
         # 2nd string is SSID
-
         ssid = access_point.findall("string")[1].text
         
         # 8th integer is signal strength
-        # strength = abs(int(access_point.findall("integer")[7].text))
-        # access_points[address] = strength
+        # is this sorting by signal strength?s
+        strength = abs(int(access_point.findall("integer")[7].text))
+        access_points[address] = strength
         
         # TO DO figure out a way to grab encryption either YES or NONE set a flag
         
