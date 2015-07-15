@@ -24,26 +24,23 @@ def find_access_points():
     for access_point in output:
         
         # 1st string is MAC address
-        address = access_point.find("string").text
+        macaddr = access_point.find("string").text
         
         # 2nd string is SSID
-        # THIS SEEMS TO BE FAILING
         ssid = access_point.findall("string")[1].text
         
         # 8th integer is signal strength
-        # is this sorting by signal strength?s
         strength = abs(int(access_point.findall("integer")[7].text))
-        access_points[address] = strength
+        # is this sorting by signal strength?
+        access_points[macaddr] = strength
         
         # is there some missing append thing not happening?
         # e.g. from MOUNTED --> volume_tuples.append((volume_name, subtitle, volume_arg, volume_icon))
         # but this came back as a dictionary, so... how to do it? extract first from dictionary into a tuple?
-        # access_points.append(ssid, address, strength)
+        # access_points.append(ssid, mac, strength)
         
         # TO DO figure out a way to grab encryption either YES or NONE set a flag
         
-        # DEBUG print counter
-        d += 1
-        print d, ssid, address, strength
+        print ssid, macaddr, strength
         
     return access_points
