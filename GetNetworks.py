@@ -32,7 +32,7 @@ def run():
     for ssid in network_list:
         
         # replace icon with network_icon later (see subroutine at bototm)
-        feedback.add_item(ssid, macaddr, '', icon='OPEN.png')
+        feedback.add_item(ssid, ssid, '', icon='OPEN.png')
         
     return feedback
         

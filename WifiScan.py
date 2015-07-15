@@ -7,7 +7,7 @@ import sys
 import xml.etree.ElementTree as ET
 
 # debug
-print "This is WifiScan.py's contents"
+# print "This is WifiScan.py's contents"
     
 
 #Runs OSX Airport utility with scan and xml out flags set
@@ -24,9 +24,12 @@ def find_access_points():
     for access_point in output:
         
         # 1st string is MAC address
+        # TO DO This is not working for some reason, and trying to pass it back is borking the rest of the script
         macaddr = access_point.find("string").text
         
         # 2nd string is SSID
+        # TO DO this -is- working but its the MAC not the SSID
+        # TO DO is this because the first string is the country code (e.g. 'US'?)
         ssid = access_point.findall("string")[1].text
         
         # 8th integer is signal strength
@@ -40,7 +43,5 @@ def find_access_points():
         # access_points.append(ssid, mac, strength)
         
         # TO DO figure out a way to grab encryption either YES or NONE set a flag
-        
-        print ssid, macaddr, strength
         
     return access_points
