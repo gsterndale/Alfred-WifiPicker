@@ -3,18 +3,20 @@
 import os, WifiScan
 
 
+
 # Test WiFiScan data return
 
 def run():
     # returns a dictionary list of networks as ssids and macs sorted by signal strength
     networks = WifiScan.find_access_points()
     
-    # print the whole dictionary
+    # debug
+    print "This is Debug.py's contents"
     
     for ssid in networks:
-        print "SSID " ssid
-        print "MAC " mac
-        print "signal " signal
+        print "SSID %s" % ssid
+        print "Address %s" % address
+        print "Strength %s" % strength
         
         
         # Sample code for printing a nested dictionary
@@ -23,4 +25,7 @@ def run():
         #    for y in cars[x]:
         #        print (y,':',cars[x][y])
         
+
         
+        
+print run()
