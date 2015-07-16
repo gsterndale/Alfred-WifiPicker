@@ -21,13 +21,13 @@
 		</array>
 	</dict>
 	<key>createdby</key>
-	<string></string>
+	<string>Anthony Townsend</string>
 	<key>description</key>
 	<string></string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>A New Wifi picker</string>
+	<string>A Wi-Fi Network Picker</string>
 	<key>objects</key>
 	<array>
 		<dict>
@@ -66,9 +66,13 @@
 				<integer>0</integer>
 				<key>queuemode</key>
 				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Scanning the ether...</string>
 				<key>script</key>
 				<string>from GetNetworks import run
 print run()</string>
+				<key>subtext</key>
+				<string>Select a network (open and closed status coming soon...)</string>
 				<key>title</key>
 				<string>Choose WiFi</string>
 				<key>type</key>
@@ -130,6 +134,6 @@ print run()</string>
 		</dict>
 	</dict>
 	<key>webaddress</key>
-	<string></string>
+	<string>www.anthonymobile.com</string>
 </dict>
 </plist>
