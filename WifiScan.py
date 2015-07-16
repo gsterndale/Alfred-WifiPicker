@@ -16,12 +16,14 @@ def find_access_points():
     output = root.getchildren()[0]
     access_points = {}
     d = 0
+    
+    print >> sys.stderr, "This is WifiScan.py"
 
     for access_point in output:
         
         # 1st string is MAC address
-        macaddr = access_point.find("string").text
-        print >> sys.stderr, macaddr
+        mac = access_point.find("string").text
+        print >> sys.stderr, mac
                 
         # 2nd string is SSID
         # DEBUG this -is- working but its the MAC not the SSID
@@ -31,12 +33,12 @@ def find_access_points():
         
         # 8th integer is signal strength
         strength = abs(int(access_point.findall("integer")[7].text))
-        print >> sys.stderr, strength
-        
+        # print >> sys.stderr, strength
+        #
         # is this sorting by signal strength?
-        access_points[macaddr] = strength
-        
+        access_points[mac] = strength
         
         # TO DO figure out a way to grab encryption either YES or NONE set a flag
         
+    # this should be returning a dictionary with entries that are {MAC:SSID, MAC:SSID, etc...}
     return access_points
