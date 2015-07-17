@@ -28,10 +28,10 @@ def run():
 
     # Add the network items to feedback
     
-    for ssid in networks:
+    for mac in networks:
         
         # replace icon with network_icon later (see subroutine at bototm)
-        feedback.add_item(ssid, '', '', icon='OPEN.png')
+        feedback.add_item(networks[mac], mac, '', icon='OPEN.png')
         
     return feedback
         

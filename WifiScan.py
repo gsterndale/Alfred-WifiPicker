@@ -15,30 +15,29 @@ def find_access_points():
     root = ET.fromstring(getoutput(scan))
     output = root.getchildren()[0]
     access_points = {}
-    d = 0
     
     print >> sys.stderr, "This is WifiScan.py"
 
     for access_point in output:
         
-        # 1st string is MAC address
+        
+        # TO DO filter out multiple APs for the same SSID (probably flip the key:value scheme) 
+    
+        # 1st string is MAC address - the dictionary's key
         mac = access_point.find("string").text
-        print >> sys.stderr, mac
                 
         # 2nd string is SSID
-        # DEBUG this -is- working but its the MAC not the SSID
-        # DEBUG is this because the first string is the country code (e.g. 'US'?)
         ssid = access_point.findall("string")[1].text
-        print >> sys.stderr, ssid  
         
+        # TO DO figure outa way to pass out these two variables back
+        # TO DO how did the original script do it?
+
+        # encryption either YES or NONE set a flag
+
         # 8th integer is signal strength
-        strength = abs(int(access_point.findall("integer")[7].text))
-        # print >> sys.stderr, strength
-        #
-        # is this sorting by signal strength?
-        access_points[mac] = strength
+        # strength = abs(int(access_point.findall("integer")[7].text))
+
+        # set the value portion of dictionary's {key:value} pair!!!
+        access_points[mac] = ssid
         
-        # TO DO figure out a way to grab encryption either YES or NONE set a flag
-        
-    # this should be returning a dictionary with entries that are {MAC:SSID, MAC:SSID, etc...}
     return access_points
