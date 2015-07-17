@@ -47,7 +47,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>networksetup -setairportnetwork en0 {query}</string>
+				<string>networksetup -setairportnetwork en0 {query}; echo {query}</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
