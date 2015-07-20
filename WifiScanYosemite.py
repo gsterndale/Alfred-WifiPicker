@@ -24,8 +24,10 @@ def find_access_points():
     root = getoutput(scan)
     output = plistlib.readPlistFromString(root)
     info = {}
+    
     for node in output:
         temp_dict = parse_plist_output(node)
+
         for k, v in temp_dict.iteritems():
             if k in info:
                 if isinstance(info[k], list):
@@ -34,10 +36,7 @@ def find_access_points():
                     info[k] = [info[k], v]
             else:
                 info[k] = v
-        # debugging start
-        print >> std_err, "Contents of temp_dict at end of find_access_points
-        print >> std_err, temp_dict
-        # debugging end
+      
     return info
 
 def parse_plist_output(node):
@@ -63,15 +62,11 @@ def parse_plist_output(node):
                     return_val[key] = value
     except Exception as e:
         logging.exception("%s key: %s, value: %s", (e, key, value))
-
-
-    # debugging start
-    print >> std_err, "Contents of return_val at end of parse_plist_output
-    print >> std_err, return_val
-    # debugging end
     
     return return_val
 
+
+# TO DO make sure to sort by signal strength if possible
 
 def parameters(signals):
     """
@@ -107,6 +102,7 @@ if __name__ == "__main__":
     url = "INSERT HERE"
 
 # returns a JSON file at URL above? is this a useful output format, or should i pull the data after the fund_Access_points (e.g. cut everything below # MAKE JSON below here )
+# might be useful to have the JSON just as a diagnostic
 
     f = urllib.urlopen(url %params)
     print "Retrieving JSON"

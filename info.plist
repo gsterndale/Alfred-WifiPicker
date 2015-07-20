@@ -81,7 +81,7 @@
 				<string>from GetNetworks import run
 print run()</string>
 				<key>subtext</key>
-				<string>Select a network (open and closed status coming soon...)</string>
+				<string>Pick a network to connect...</string>
 				<key>title</key>
 				<string>Choose WiFi</string>
 				<key>type</key>
@@ -110,7 +110,7 @@ print run()</string>
 				<key>sticky</key>
 				<false/>
 				<key>text</key>
-				<string>Connected to {query} (I hope)</string>
+				<string>to {query}</string>
 				<key>title</key>
 				<string>Connected!</string>
 			</dict>
